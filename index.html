@@ -6,6 +6,7 @@
     <!-- rimix icon cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <title>Document</title>
   
 
@@ -118,45 +119,204 @@
     </header>
     <!-- Hero section end here  -->
 
-    <!-- Happy Clients section start here -->
-    <section id="happy-clients" class="py-12 mt-50 bg-gray-100">
+    <!-- About section start here  -->
+    <section id="about" class="py-12 bg-gray-100">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-semibold text-center text-blue-800 mb-8">Happy Clients</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
-                    <div class="mt-4 flex items-center">
-                        <img src="https://placehold.co/64x64" alt="client" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <p class="text-blue-800 font-semibold">John Doe</p>
-                            <p class="text-gray-600 text-sm">CEO, Company A</p>
-                        </div>
-                    </div>
+            <h2 class="text-3xl font-semibold text-center text-blue-800 mb-8">About Us</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="w-full md:w-1/2">
+                    <img src="https://placehold.co/500x300" alt="about" class="w-full h-full rounded-lg shadow-lg">
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <p class="text-gray-600">"The team at Branding Solutions is exceptional. Their expertise in digital marketing has helped us reach new heights."</p>
-                    <div class="mt-4 flex items-center">
-                        <img src="https://placehold.co/64x64" alt="client" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <p class="text-blue-800 font-semibold">Jane Smith</p>
-                            <p class="text-gray-600 text-sm">Marketing Head, Company B</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white p-6 rounded-lg shadow-lg">
-                    <p class="text-gray-600">"Working with Branding Solutions has been a game-changer for us. Their innovative solutions and dedication are unmatched."</p>
-                    <div class="mt-4 flex items-center">
-                        <img src="https://placehold.co/64x64" alt="client" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <p class="text-blue-800 font-semibold">Michael Lee</p>
-                            <p class="text-gray-600 text-sm">Founder, Company C</p>
-                        </div>
-                    </div>
+                <div class="w-full md:w-1/2 mt-6 md:mt-0">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Who We Are</h3>
+                    <p class="text-gray-600">Branding Solutions is a digital marketing agency that specializes in transforming online businesses. Our team of experts is dedicated to creating innovative strategies that drive results. With our proven track record, we have helped numerous clients achieve their goals and grow their brands.</p>
+                    <h3 class="text-2xl font-semibold text-blue-800 mt-8 mb-4">Our Mission</h3>
+                    <p class="text-gray-600">Our mission is to empower online businesses to thrive in the digital world. We believe in the power of strategic marketing, captivating designs, and results-driven campaigns. By partnering with us, you can elevate your brand and position it as a market leader.</p>
                 </div>
             </div>
         </div>
     </section>
+    <!-- About section end here  -->
+
+    <!-- Services section start here  -->
+    <section id="services" class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-semibold text-center text-blue-800 mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <i class="ri-paint-brush-line text-4xl text-blue-800"></i>
+                    <h3 class="text-2xl font-semibold text-blue-800 mt-4">Creative Design</hjson>
+                    <p class="text-gray-600 mt-4">Our team of designers creates captivating designs that resonate with your audience and elevate your brand.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <i class="ri-bar-chart-line text-4xl text-blue-800"></i>
+                    <h3 class="text-2xl font-semibold text-blue-800 mt-4">Digital Marketing</h3>
+                    <p class="text-gray-600 mt-4">We develop strategic marketing campaigns that drive results and help you achieve your business goals.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <i class="ri-code-line text-4xl text-blue-800"></i>
+                    <h3 class="text-2xl font-semibold text-blue-800 mt-4">Web Development</h3>
+                    <p class="text-gray-600 mt-4">Our team of developers creates responsive websites that are optimized for performance and user experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Services section end here  -->
+
+    <!-- Projects section start here  -->
+    <section id="projects" class="py-12 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-semibold text-center text-blue-800 mb-8">Our Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/500x300" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-800">Project A</h3>
+                    <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/500x300" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-800">Project B</h3>
+                    <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="https://placehold.co/500x300" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
+                    <h3 class="text-2xl font-semibold text-blue-800">Project C</h3>
+                    <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projects section end here  -->
+    <section id="happy-clients" class="py-12 mt-50 bg-gray-100">
+        <div class="container mx-auto px-6 overflow-hidden">
+            <h2 class="text-3xl font-semibold text-center text-blue-800 mb-8">Happy Clients</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://placehold.co/64x64" alt="client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="text-blue-800 font-semibold">John Doe</p>
+                                <p class="text-gray-600 text-sm">CEO, Company A</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://placehold.co/64x64" alt="client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="text-blue-800 font-semibold">John Doe</p>
+                                <p class="text-gray-600 text-sm">CEO, Company A</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://placehold.co/64x64" alt="client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="text-blue-800 font-semibold">John Doe</p>
+                                <p class="text-gray-600 text-sm">CEO, Company A</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://placehold.co/64x64" alt="client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="text-blue-800 font-semibold">John Doe</p>
+                                <p class="text-gray-600 text-sm">CEO, Company A</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-600">"The team at Branding Solutions is exceptional. Their expertise in digital marketing has helped us reach new heights."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://placehold.co/64x64" alt="client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="text-blue-800 font-semibold">Jane Smith</p>
+                                <p class="text-gray-600 text-sm">Marketing Head, Company B</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
+                        <p class="text-gray-600">"Working with Branding Solutions has been a game-changer for us. Their innovative solutions and dedication are unmatched."</p>
+                        <div class="mt-4 flex items-center">
+                            <img src="https://placehold.co/64x64" alt="client" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="text-blue-800 font-semibold">Michael Lee</p>
+                                <p class="text-gray-600 text-sm">Founder, Company C</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more slides as needed -->
+                </div>
+                <!-- Add Pagination
+                <div class="swiper-pagination"></div> -->
+            </div>
+        </div>
+    </section>
     <!-- Happy Clients section end here -->
+         <!-- Brand Logos section start here -->
+    <section id="brand-logos" class="py-12 bg-white">
+        <div class="container mx-auto px-6 overflow-hidden">
+            <h2 class="text-3xl font-semibold text-center text-blue-800 mb-8">Our Partners</h2>
+            <div class="logo-marquee">
+                <div class="logo-marquee-content flex items-center space-x-8">
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 1" class="h-16">
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 2" class="h-16">
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 3" class="h-16">
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 4" class="h-16">
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 5" class="h-16">
+                    <!-- Duplicate logos for infinite effect -->
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 1" class="h-16">
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 2" class="h-16">
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 3" class="h-16">
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 4" class="h-16">
+                    <img src="https://placehold.co/150x50" alt="Brand Logo 5" class="h-16">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Brand Logos section end here -->
+
+    <!-- Contact section start here  -->
+    <section id="contact" class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-semibold text-center text-blue-800 mb-8">Contact Us</h2>
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="w-full md:w-1/2">
+                    <img src="https://placehold.co/500x300" alt="contact" class="w-full h-full rounded-lg shadow-lg">
+                </div>
+                <div class="w-full md:w-1/2 mt-6 md:mt-0">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">Get in Touch</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                    <form class="mt-8">
+                        <div class="flex flex-col mb-4">
+                            <label for="name" class="text-gray-800">Name</label>
+                            <input type="text" id="name" name="name" class="border border-gray-300 rounded-lg px-3 py-2 mt-1">
+                        </div>
+                        <div class="flex flex-col mb-4">
+                            <label for="email" class="text-gray-800">Email</label>
+                            <input type="email" id="email" name="email" class="border border-gray-300 rounded-lg px-3 py-2 mt-1">
+                        </div>
+                        <div class="flex flex-col mb-4">
+                            <label for="message" class="text-gray-800">Message</label>
+                            <textarea id="message" name="message" rows="4" class="border border-gray-300 rounded-lg px-3 py-2 mt-1"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-500 text-white font-semibold px-6 py-2 rounded-lg hover:bg-blue-800 transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact section end here  -->
+
+    
+
 
       <!-- Floating Scroll to Top Button -->
       <button class="scroll-to-top" onclick="scrollToTop()">
@@ -178,6 +338,7 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
         const btn = document.querySelector("button.mobile-menu-button");
         const closeBtn = document.querySelector("button.close-menu-button");
@@ -231,7 +392,75 @@
                 nav.classList.remove("scrolled");
             }
         });
+
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            slidesPerView: 1,
+            spaceBetween: 30,
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+            },
+        });
+
+        const brandLogoSwiper = new Swiper('.brand-logo-slider', {
+            loop: true,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            speed: 5000,
+            slidesPerView: 'auto',
+            spaceBetween: 30,
+            freeMode: true,
+            freeModeMomentum: false,
+            on: {
+                touchEnd: function() {
+                    this.autoplay.start();
+                }
+            }
+        });
     </script>
+    <style>
+        .logo-marquee {
+            overflow: hidden;
+            position: relative;
+        }
+        .logo-marquee-content {
+            display: flex;
+            animation: logo-marquee 20s linear infinite;
+        }
+        @keyframes logo-marquee {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        .logo-marquee:hover .logo-marquee-content,
+        .logo-marquee:active .logo-marquee-content {
+            animation-play-state: paused;
+        }
+    </style>
 </body>
 </html>
 <!-- https://placehold.co/32x32 -->
