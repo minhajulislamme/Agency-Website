@@ -44,7 +44,7 @@
 }
 .scroll-to-top {
   position: fixed;
-  bottom: 80px;
+  @apply bottom-4;
   right: 20px;
   @apply bg-blue-500;
   color: white;
