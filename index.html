@@ -9,45 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <title>Grow Ever</title>
     <style>
-        /* Section Animation Styles */
-        @keyframes sectionFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        section {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-
-        section.animate {
-            animation: sectionFadeIn 0.8s ease-out forwards;
-        }
-
-        /* Stagger child elements animation */
-        .animate-children > * {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease-out;
-        }
-
-        .animate-children.animate > *:nth-child(1) { transition-delay: 0.1s; }
-        .animate-children.animate > *:nth-child(2) { transition-delay: 0.2s; }
-        .animate-children.animate > *:nth-child(3) { transition-delay: 0.3s; }
-        .animate-children.animate > *:nth-child(4) { transition-delay: 0.4s; }
-        .animate-children.animate > *:nth-child(5) { transition-delay: 0.5s; }
-        .animate-children.animate > *:nth-child(6) { transition-delay: 0.6s; }
-
-        .animate-children.animate > * {
-            opacity: 1;
-            transform: translateY(0);
-        }
+       
     </style>
 </head>
 <body class="font-inter bg-gray-100">
