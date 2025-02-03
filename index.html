@@ -7,11 +7,58 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
     <link rel="stylesheet" href="./src/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-    <title>Document</title>
-  
+    <title>Grow Ever</title>
+    <style>
+        /* Section Animation Styles */
+        @keyframes sectionFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
+        section {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        section.animate {
+            animation: sectionFadeIn 0.8s ease-out forwards;
+        }
+
+        /* Stagger child elements animation */
+        .animate-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+
+        .animate-children.animate > *:nth-child(1) { transition-delay: 0.1s; }
+        .animate-children.animate > *:nth-child(2) { transition-delay: 0.2s; }
+        .animate-children.animate > *:nth-child(3) { transition-delay: 0.3s; }
+        .animate-children.animate > *:nth-child(4) { transition-delay: 0.4s; }
+        .animate-children.animate > *:nth-child(5) { transition-delay: 0.5s; }
+        .animate-children.animate > *:nth-child(6) { transition-delay: 0.6s; }
+
+        .animate-children.animate > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body class="font-inter bg-gray-100">
+    <!-- Add Loading Screen -->
+    <div class="loading">
+        <div class="animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"></div>
+    </div>
+
+    <!-- Add Scroll Progress Bar -->
+    <div class="scroll-progress"></div>
+
     <!-- Navbar section start here  -->
     <nav class="sticky top-0 bg-gray-100 z-50">
         <div class="container mx-auto px-6 py-3">
@@ -34,9 +81,9 @@
                     </ul>
                 </div>
                 <div class="hidden md:block">
-                    <a href="#" class="  py-2 px-3 bg-blue-500 rounded text-white  font-semibold text-lg hover:bg-blue-800 transition duration-300">
+                    <a href="#contact" class="contact-btn">
                         <i class="ri-phone-line"></i>
-                        <span>Contat Us</span>
+                        <span>Contact Us</span>
                     </a>
                 </div>
                 <!-- Mobile menu button -->
@@ -74,9 +121,9 @@
                 <li><a href="#contact" class="block text-sm px-4 py-2 mt-6 text-gray-800 transition duration-300 menu-link">Contact</a></li>
             </ul>
             <div class="justify-center items-center flex">
-                <a href="#" class="  py-2 px-3 bg-blue-700 rounded-full text-white font-semibold text-sm hover:bg-blue-500 transition duration-300">
+                <a href="#contact" class="contact-btn">
                     <i class="ri-phone-line"></i>
-                    <span>Contat Us</span>
+                    <span>Contact Us</span>
                 </a>
             </div>
         </div>
@@ -91,8 +138,8 @@
                 <h1 class="text-5xl font-semibold text-blue-500">One Stop Solution For your online business</h1>
                 <p class="text-lg mt-4 mb-6 text-gray-600">At Branding Solutions, we empower online businesses to thrive with strategic marketing, captivating designs, and results-driven campaigns. Together, let’s elevate your brand and position it as a market leader!</p>
                 <div class="flex justify-center md:justify-start items-center mt-6">
-                    <a href="#" class="  py-2 px-3 bg-blue-500 rounded-full text-white font-semibold text-lg hover:bg-blue-800 transition duration-300">
-                        <i class="ri-phone-line"></i>
+                    <a href="#contact" class="contact-btn">
+                        <i class="ri-send-plane-line"></i>
                         <span>Contact Us</span>
                     </a>
 
@@ -198,7 +245,7 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6">
-                <div class="bg-white p-6 rounded-lg hover:shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg hover-card text-center">
                     <i class="ri-megaphone-line  text-4xl text-blue-500 bg-blue-200 p-4 rounded-full"></i>
                     <h3 class="text-2xl font-semibold text-blue-600 mt-4">Digital Marketing</h3>
                     <p class="text-gray-600 text-sm font-normal mt-4">
@@ -206,7 +253,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg hover:shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg hover-card text-center">
                     <i class="ri-megaphone-line text-4xl text-blue-500 bg-blue-200 p-4 rounded-full"></i>
                     <h3 class="text-2xl font-semibold text-blue-600 mt-4">Marketing Consultancy </h3>
                     <p class="text-gray-600 text-sm font-normal mt-4">
@@ -214,7 +261,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg hover:shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg hover-card text-center">
                     <i class="ri-code-s-slash-line text-4xl text-blue-500 bg-blue-200 p-4 rounded-full"></i>
                     <h3 class="text-2xl font-semibold text-blue-600 mt-4">Business Consultancy </h3>
                     <p class="text-gray-600 text-sm font-normal mt-4">
@@ -222,7 +269,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg hover:shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg hover-card text-center">
                     <i class="ri-code-s-slash-line text-4xl text-blue-500 bg-blue-200 p-4 rounded-full"></i>
                     <h3 class="text-2xl font-semibold text-blue-600 mt-4">UI/UX Design</h3>
                     <p class="text-gray-600 text-sm font-normal mt-4">
@@ -230,7 +277,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg hover:shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg hover-card text-center">
                     <i class="ri-code-s-slash-line text-4xl text-blue-500 bg-blue-200 p-4 rounded-full"></i>
                     <h3 class="text-2xl font-semibold text-blue-600 mt-4">Web Development</h3>
                     <p class="text-gray-600 text-sm font-normal mt-4">
@@ -238,7 +285,7 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg hover:shadow-lg text-center">
+                <div class="bg-white p-6 rounded-lg hover-card text-center">
                     <i class="ri-code-s-slash-line text-4xl text-blue-500 bg-blue-200 p-4 rounded-full"></i>
                     <h3 class="text-2xl font-semibold text-blue-600 mt-4">Automation Solution</h3>
                     <p class="text-gray-600 text-sm font-normal mt-4">
@@ -270,65 +317,77 @@
                     <span class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, porro?</span>
                 </div>
             </div> 
-            <div class="swiper-container">
+            <div class="swiper-container px-4 -mx-4 md:px-0 md:mx-0">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
-                        <div class="mt-4 flex items-center">
-                            <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="text-blue-800 font-semibold">John Doe</p>
-                                <p class="text-gray-600 text-sm">CEO, Company A</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
+                            <div class="mt-4 flex items-center">
+                                <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-blue-800 font-semibold">John Doe</p>
+                                    <p class="text-gray-600 text-sm">CEO, Company A</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
-                        <div class="mt-4 flex items-center">
-                            <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="text-blue-800 font-semibold">John Doe</p>
-                                <p class="text-gray-600 text-sm">CEO, Company A</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
+                            <div class="mt-4 flex items-center">
+                                <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-blue-800 font-semibold">John Doe</p>
+                                    <p class="text-gray-600 text-sm">CEO, Company A</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
-                        <div class="mt-4 flex items-center">
-                            <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="text-blue-800 font-semibold">John Doe</p>
-                                <p class="text-gray-600 text-sm">CEO, Company A</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
+                            <div class="mt-4 flex items-center">
+                                <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-blue-800 font-semibold">John Doe</p>
+                                    <p class="text-gray-600 text-sm">CEO, Company A</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
-                        <div class="mt-4 flex items-center">
-                            <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="text-blue-800 font-semibold">John Doe</p>
-                                <p class="text-gray-600 text-sm">CEO, Company A</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <p class="text-gray-600">"Branding Solutions transformed our online presence. Their strategic approach and creative designs have significantly boosted our business."</p>
+                            <div class="mt-4 flex items-center">
+                                <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-blue-800 font-semibold">John Doe</p>
+                                    <p class="text-gray-600 text-sm">CEO, Company A</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <p class="text-gray-600">"The team at Branding Solutions is exceptional. Their expertise in digital marketing has helped us reach new heights."</p>
-                        <div class="mt-4 flex items-center">
-                            <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="text-blue-800 font-semibold">Jane Smith</p>
-                                <p class="text-gray-600 text-sm">Marketing Head, Company B</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <p class="text-gray-600">"The team at Branding Solutions is exceptional. Their expertise in digital marketing has helped us reach new heights."</p>
+                            <div class="mt-4 flex items-center">
+                                <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-blue-800 font-semibold">Jane Smith</p>
+                                    <p class="text-gray-600 text-sm">Marketing Head, Company B</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <p class="text-gray-600">"Working with Branding Solutions has been a game-changer for us. Their innovative solutions and dedication are unmatched."</p>
-                        <div class="mt-4 flex items-center">
-                            <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
-                            <div>
-                                <p class="text-blue-800 font-semibold">Michael Lee</p>
-                                <p class="text-gray-600 text-sm">Founder, Company C</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <p class="text-gray-600">"Working with Branding Solutions has been a game-changer for us. Their innovative solutions and dedication are unmatched."</p>
+                            <div class="mt-4 flex items-center">
+                                <img src="./1.jpg" alt="client" class="w-12 h-12 rounded-full mr-4">
+                                <div>
+                                    <p class="text-blue-800 font-semibold">Michael Lee</p>
+                                    <p class="text-gray-600 text-sm">Founder, Company C</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -345,37 +404,49 @@
     <section id="projects" class="py-12 bg-gray-100 z-30">
         <div class="container mx-auto px-6 overflow-hidden">
             <h2 class="text-3xl font-semibold text-center text-blue-800 mb-8">Our Projects</h2>
-            <div class="swiper-container projects-slider">
+            <div class="swiper-container px-4 -mx-4 md:px-0 md:mx-0">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-blue-800">Project A</h3>
-                        <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
+                            <h3 class="text-2xl font-semibold text-blue-800">Project A</h3>
+                            <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                        </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-blue-800">Project A</h3>
-                        <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
+                            <h3 class="text-2xl font-semibold text-blue-800">Project A</h3>
+                            <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                        </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-blue-800">Project A</h3>
-                        <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
+                            <h3 class="text-2xl font-semibold text-blue-800">Project A</h3>
+                            <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                        </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-blue-800">Project A</h3>
-                        <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
+                            <h3 class="text-2xl font-semibold text-blue-800">Project A</h3>
+                            <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                        </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-blue-800">Project B</h3>
-                        <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
+                            <h3 class="text-2xl font-semibold text-blue-800">Project B</h3>
+                            <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                        </div>
                     </div>
-                    <div class="swiper-slide bg-white p-6 rounded-lg shadow-lg">
-                        <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
-                        <h3 class="text-2xl font-semibold text-blue-800">Project C</h3>
-                        <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                    <div class="swiper-slide p-4">
+                        <div class="bg-white p-6 rounded-lg shadow-lg h-full">
+                            <img src="./Marketing-Trends-2024_Flash-vector.png" alt="project" class="w-full h-48 object-cover object-center mb-6 rounded-lg">
+                            <h3 class="text-2xl font-semibold text-blue-800">Project C</h3>
+                            <p class="text-gray-600 mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
+                        </div>
                     </div>
                     <!-- Add more slides as needed -->
                 </div>
@@ -533,14 +604,82 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between">
-                <p>&copy; 2023 Agency. All rights reserved.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="hover:text-gray-400">Privacy Policy</a>
-                    <a href="#" class="hover:text-gray-400">Terms of Service</a>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1">
+                    <div class="flex items-center mb-4">
+                        <img src="./Grow Ever Logo.png" alt="logo" class="h-10 w-10 mr-2 rounded-sm">
+                        <div>
+                            <div class="font-semibold text-xl text-blue-500">Grow Ever</div>
+                            <div class="font-semibold text-xs text-gray-400">Idea. Start. Execute.</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut purus eget nunc.</p>
                 </div>
+
+                <!-- Quick Links -->
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">Services</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold mb-4">Our Services</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">Digital Marketing</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">Web Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">UI/UX Design</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">Business Consulting</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-500 transition-colors text-sm">SEO Optimization</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-span-1">
+                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="ri-map-pin-line text-blue-500 mr-2"></i>
+                            <span class="text-gray-400 text-sm">123 Business Street, New York, USA</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-phone-line text-blue-500 mr-2"></i>
+                            <span class="text-gray-400 text-sm">+1 234 567 890</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="ri-mail-line text-blue-500 mr-2"></i>
+                            <span class="text-gray-400 text-sm">info@growever.com</span>
+                        </div>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                                <i class="ri-facebook-fill text-lg"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                                <i class="ri-twitter-fill text-lg"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                                <i class="ri-linkedin-fill text-lg"></i>
+                            </a>
+                            <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors">
+                                <i class="ri-instagram-fill text-lg"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">&copy; 2024 Grow Ever. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -600,78 +739,51 @@
             }
         });
 
-        const swiper = new Swiper('.swiper-container', {
+        const swiperConfig = {
             loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+            speed: 800,
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
             },
-            slidesPerView: 1,
-            spaceBetween: 30,
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 30,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 40,
-                },
-            },
-        });
-
-        const projectsSwiper = new Swiper('.projects-slider', {
-            loop: true,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
+                dynamicBullets: true,
             },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
-            slidesPerView: 1,
+            // Add more spacing between slides
             spaceBetween: 30,
             breakpoints: {
-                640: {
+                320: {
                     slidesPerView: 1,
                     spaceBetween: 20,
+                    centeredSlides: true
                 },
-                768: {
+                640: { 
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                    centeredSlides: true
+                },
+                768: { 
                     slidesPerView: 2,
                     spaceBetween: 30,
+                    centeredSlides: false
                 },
-                1024: {
+                1024: { 
                     slidesPerView: 3,
                     spaceBetween: 40,
+                    centeredSlides: false
                 },
-            },
-        });
-
-        const brandLogoSwiper = new Swiper('.brand-logo-slider', {
-            loop: true,
-            autoplay: {
-                delay: 0,
-                disableOnInteraction: false,
-            },
-            speed: 5000,
-            slidesPerView: 'auto',
-            spaceBetween: 30,
-            freeMode: true,
-            freeModeMomentum: false,
-            on: {
-                touchEnd: function() {
-                    this.autoplay.start();
-                }
             }
+        };
+
+        // Initialize Swiper instances with optimized config
+        const swipers = document.querySelectorAll('.swiper-container').forEach(element => {
+            new Swiper(element, swiperConfig);
         });
 
         const logoMarquee = document.querySelector('.logo-marquee');
@@ -721,55 +833,76 @@
                 icon.classList.toggle('ri-arrow-up-s-line');
             });
         });
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            document.querySelector('.loading').style.opacity = 0;
+            setTimeout(() => {
+                document.querySelector('.loading').style.display = 'none';
+            }, 300);
+        });
+
+        // Scroll Progress
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = window.scrollY;
+            const progress = `${(scrolled / scrollable) * 100}%`;
+            scrollProgress.style.transform = `scaleX(${progress})`;
+        });
+
+        // Fade In Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(element => observer.observe(element));
+
+        // Contact Button Animation
+        const contactBtns = document.querySelectorAll('.contact-btn');
+        contactBtns.forEach(btn => {
+            btn.addEventListener('mouseover', () => {
+                btn.querySelector('i').style.transform = 'translateX(3px)';
+            });
+            btn.addEventListener('mouseout', () => {
+                btn.querySelector('i').style.transform = 'translateX(0)';
+            });
+        });
+
+        // Section Animation Observer
+        const sectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    // Also animate children if container has animate-children class
+                    if (entry.target.classList.contains('animate-children')) {
+                        entry.target.classList.add('animate');
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px'
+        });
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Add animate-children class to containers that need staggered animations
+        document.querySelectorAll('.grid, .flex').forEach(container => {
+            container.classList.add('animate-children');
+            sectionObserver.observe(container);
+        });
     </script>
     <style>
-        .logo-marquee {
-            overflow: hidden;
-            position: relative;
-        }
-        .logo-marquee-content {
-            display: flex;
-            animation: logo-marquee 20s linear infinite;
-        }
-        @keyframes logo-marquee {
-            0% {
-                transform: translateX(0%);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        .logo-marquee:hover .logo-marquee-content,
-        .logo-marquee:active .logo-marquee-content,
-        .logo-marquee.touching .logo-marquee-content {
-            animation-play-state: paused;
-        }
-        .wave-animation {
-            position: relative;
-            overflow: hidden;
-        }
-        .wave-animation::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            animation: wave 2s infinite;
-        }
-        @keyframes wave {
-            0% {
-                transform: translate(-50%, -50%) scale(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-                opacity: 0;
-            }
-        }
+        
     </style>
 </body>
 </html>
