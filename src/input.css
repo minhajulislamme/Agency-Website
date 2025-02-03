@@ -1,0 +1,78 @@
+/* google font import  */
+@import url('https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=Hind+Siliguri:wght@300;400;500;600;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import "tailwindcss";
+
+/* custom css */
+.font-anek {
+  font-family: 'Anek Bangla', sans-serif;
+}
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+.font-hind{
+  font-family: 'Hind Siliguri', sans-serif;
+}
+.active {
+  @apply border-b-2 text-blue-500 border-blue-500;
+}
+
+
+.mobile-menu {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+  width: 70%;
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+.bottom-menu {
+  display: none;
+}
+@media (max-width: 768px) {
+  .bottom-menu {
+      display: flex;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      border-top: 1px solid #e5e7eb;
+      justify-content: space-around;
+      padding: 10px 0;
+      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  }
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  @apply bg-blue-500;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.scroll-to-top:hover {
+  @apply bg-blue-500;
+}
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.scrolled {
+  box-shadow: 0 4px 2px -2px rgb(237, 237, 237);
+}
