@@ -348,6 +348,25 @@
         </svg>
     </button>
 
+    <!-- Floating Chat Button -->
+    <div class="fixed bottom-4 left-4 z-50">
+        <div class="relative">
+            <button id="chat-button" class="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+                <i class="ri-chat-3-line text-lg"></i>
+            </button>
+            <div id="chat-options" class="hidden absolute bottom-16 left-0 bg-white shadow-lg rounded-lg overflow-hidden">
+                <a href="tel:+1234567890" class="flex items-center p-4 hover:bg-gray-100 transition duration-300">
+                    <i class="ri-phone-line text-blue-500 text-xl mr-2"></i>
+                    <span>Call Us</span>
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank" class="flex items-center p-4 hover:bg-gray-100 transition duration-300">
+                    <i class="ri-whatsapp-line text-green-500 text-xl mr-2"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="max-w-6xl mx-auto px-4">
@@ -498,6 +517,20 @@
 
         logoMarquee.addEventListener('touchend', () => {
             logoMarquee.classList.remove('touching');
+        });
+
+        const chatButton = document.getElementById('chat-button');
+        const chatOptions = document.getElementById('chat-options');
+
+        chatButton.addEventListener('click', (e) => {
+            e.stopPropagation();
+            chatOptions.classList.toggle('hidden');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (!chatButton.contains(e.target) && !chatOptions.contains(e.target)) {
+                chatOptions.classList.add('hidden');
+            }
         });
     </script>
     <style>
