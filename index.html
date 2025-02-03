@@ -351,10 +351,11 @@
    
     <!-- Floating Chat Button -->
     <div class="fixed bottom-4 left-4 z-50">
-        <div class="relative">
-            <button id="chat-button" class="bg-blue-500 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300">
+        <div class="relative flex items-center">
+            <button id="chat-button" class="bg-blue-500 text-white py-2 px-3 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 wave-animation">
                 <i class="ri-chat-3-line text-lg"></i>
             </button>
+            <span class="ml-2 text-blue-500 font-semibold">Live Chat</span>
             <div id="chat-options" class="hidden absolute bottom-16 left-0 bg-white shadow-lg rounded-lg overflow-hidden">
                 <a href="tel:+1234567890" class="flex items-center p-4 hover:bg-gray-100 transition duration-300">
                     <i class="ri-phone-line text-blue-500 text-xl mr-2"></i>
@@ -555,6 +556,32 @@
         .logo-marquee:active .logo-marquee-content,
         .logo-marquee.touching .logo-marquee-content {
             animation-play-state: paused;
+        }
+        .wave-animation {
+            position: relative;
+            overflow: hidden;
+        }
+        .wave-animation::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            animation: wave 2s infinite;
+        }
+        @keyframes wave {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
         }
     </style>
 </body>
