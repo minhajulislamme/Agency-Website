@@ -876,12 +876,6 @@
   .h-10 {
     height: calc(var(--spacing) * 10);
   }
-  .h-12 {
-    height: calc(var(--spacing) * 12);
-  }
-  .h-16 {
-    height: calc(var(--spacing) * 16);
-  }
   .h-48 {
     height: calc(var(--spacing) * 48);
   }
@@ -891,14 +885,14 @@
   .h-100 {
     height: calc(var(--spacing) * 100);
   }
+  .h-12 {
+    height: calc(var(--spacing) * 12);
+  }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
+  }
   .h-150 {
     height: calc(var(--spacing) * 150);
-  }
-  .h-\[1000\] {
-    height: 1000;
-  }
-  .h-\[1000px\] {
-    height: 1000px;
   }
   .h-full {
     height: 100%;
@@ -950,12 +944,6 @@
   }
   .w-500 {
     width: calc(var(--spacing) * 500);
-  }
-  .w-\[1000\] {
-    width: 1000;
-  }
-  .w-\[1000px\] {
-    width: 1000px;
   }
   .w-full {
     width: 100%;
@@ -1675,6 +1663,18 @@
   .bg-blue-500 {
     background-color: var(--color-blue-500);
   }
+  .bg-blue-500\/10 {
+    background-color: color-mix(in oklab, var(--color-blue-500) 10%, transparent);
+  }
+  .bg-emerald-400 {
+    background-color: var(--color-emerald-400);
+  }
+  .bg-emerald-500 {
+    background-color: var(--color-emerald-500);
+  }
+  .bg-emerald-500\/10 {
+    background-color: color-mix(in oklab, var(--color-emerald-500) 10%, transparent);
+  }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
   }
@@ -1689,6 +1689,12 @@
   }
   .bg-red-500\/\[50\%\] {
     background-color: color-mix(in oklab, var(--color-red-500) 50%, transparent);
+  }
+  .bg-rose-500 {
+    background-color: var(--color-rose-500);
+  }
+  .bg-rose-500\/10 {
+    background-color: color-mix(in oklab, var(--color-rose-500) 10%, transparent);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -2092,6 +2098,9 @@
   .text-blue-900 {
     color: var(--color-blue-900);
   }
+  .text-emerald-500 {
+    color: var(--color-emerald-500);
+  }
   .text-gray-400 {
     color: var(--color-gray-400);
   }
@@ -2109,6 +2118,9 @@
   }
   .text-green-500 {
     color: var(--color-green-500);
+  }
+  .text-rose-500 {
+    color: var(--color-rose-500);
   }
   .text-white {
     color: var(--color-white);
@@ -2675,18 +2687,6 @@
     @media (width >= 48rem) {
       font-size: var(--text-5xl);
       line-height: var(--tw-leading, var(--text-5xl--line-height));
-    }
-  }
-  .md\:text-6xl {
-    @media (width >= 48rem) {
-      font-size: var(--text-6xl);
-      line-height: var(--tw-leading, var(--text-6xl--line-height));
-    }
-  }
-  .md\:font-semibold {
-    @media (width >= 48rem) {
-      --tw-font-weight: var(--font-weight-semibold);
-      font-weight: var(--font-weight-semibold);
     }
   }
   .lg\:grid-cols-3 {
